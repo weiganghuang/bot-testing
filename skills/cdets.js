@@ -37,7 +37,7 @@ function askForFavoriteColor(controller, bot, message, userId) {
                             convo.next();
                             return;
                         }
-                        query()
+                        query(convo)
                         convo.transitionTo("success", `_stored user preference_`);
                     });
 
@@ -61,7 +61,7 @@ function askForFavoriteColor(controller, bot, message, userId) {
 
 }
 
-function query() {
+function query(convo) {
     var http = require("https");
 
     var options = {
@@ -96,6 +96,7 @@ function query() {
 
         res.on("end", function () {
             var body = Buffer.concat(chunks);
+            convo.say('done query')
             //console.log(body.toString());
         });
     });
