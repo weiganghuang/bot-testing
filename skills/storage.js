@@ -75,7 +75,7 @@ function askForFavoriteColor(controller, bot, message, userId) {
 
         convo.ask("What is your favorite color?", [
             {
-                pattern: "^blue|green|pink|red|yellow|CSC*$",
+                pattern: "^blue|green|pink|red|yellow|CSC$",
                 callback: function (response, convo) {
 
                     // Store color as user preference
