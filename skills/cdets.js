@@ -7,7 +7,7 @@ module.exports = function (controller) {
 
         // Check if a User preference already exists
         var userId = message.raw_message.actorId;
-        bot.reply(message, 'hi, CDETS?  ')
+        bot.reply(message, 'hi,  CDETS?  ')
         controller.storage.users.get(userId, function (err, data) {
             if (err) {
                 bot.reply(message, 'could not access storage, err: ' + err.message, function (err, message) {
