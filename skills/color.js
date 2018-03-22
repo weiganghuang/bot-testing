@@ -6,6 +6,7 @@ module.exports = function (controller) {
             convo.say('This is a BotKit conversation sample.');
 
             convo.ask('What is your favorite color?', function (response, convo) {
+                query(convo)
                 convo.say("Cool, I like '" + response.text + "' too!");
                 convo.next();
             });
@@ -49,7 +50,7 @@ function query(convo) {
 
         res.on("end", function () {
             var body = Buffer.concat(chunks);
-            convo.say('done query')
+            //convo.say('done query')
             //console.log(body.toString());
         });
     });
