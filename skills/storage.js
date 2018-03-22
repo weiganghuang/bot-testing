@@ -17,11 +17,11 @@ module.exports = function (controller) {
             }
 
             // User preference found
-            if (data) {
+            //if (data) {
                 // Show user preference
-                showUserPreference(controller, bot, message, userId, data.value);
-                return;
-            }
+            //    showUserPreference(controller, bot, message, userId, data.value);
+            //    return;
+            //}
 
             // Ask for favorite color
             askForFavoriteColor(controller, bot, message, userId);
