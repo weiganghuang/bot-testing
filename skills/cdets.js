@@ -14,7 +14,6 @@ module.exports = function (controller) {
                         var key = "8f21b566-3ba1-4aa8-a629-e109f6c1bbb2";
                         var url = "https://cdetsng.cisco.com/wsapi/LTS-5.0/api/bug/${ddts}/note/Release-note";
                         var request = require("request");
-                        bot.reoly(message,'about to send request');
                         var options = { method: 'GET',
                         url: 'https://cdetsng.cisco.com/wsapi/LTS-5.0/api/bug/CSCun66310/note/Release-note',
                         headers: 
