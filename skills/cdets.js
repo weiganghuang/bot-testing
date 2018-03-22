@@ -37,7 +37,7 @@ function askForFavoriteColor(controller, bot, message, userId) {
                         }
                         //convo.say(message,'send query');
                         //query(convo)
-                        convo.transitionTo("success", `_stored user preference_`);
+                        //convo.transitionTo("success", `_stored user preference_`);
                         query(convo)
                     });
 
