@@ -27,7 +27,7 @@ function askForFavoriteColor(controller, bot, message, userId) {
             {
                 pattern: "^blue|green|pink|red|yellow|CSC",
                 callback: function (response, convo) {
-                    convo.transitTo("message",'send query');
+                    convo.transitionTo("message",`_stored user preference_`);
                     convo.repeat();
                     // Store color as user preference
                     var pickedColor = convo.extractResponse('answer');
