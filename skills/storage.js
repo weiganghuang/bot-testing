@@ -7,7 +7,7 @@ module.exports = function (controller) {
 
         // Check if a User preference already exists
         var userId = message.raw_message.actorId;
-        bot.reply(message, 'hi, ' + userId)
+        //bot.reply(message, 'hi, ' + userId)
         controller.storage.users.get(userId, function (err, data) {
             if (err) {
                 bot.reply(message, 'could not access storage, err: ' + err.message, function (err, message) {
@@ -24,7 +24,7 @@ module.exports = function (controller) {
             }
 
             // Ask for favorite color
-            askForCDETS(controller, bot, message, userId);
+            askForFavoriteColor(controller, bot, message, userId);
         });
     });
 }
@@ -186,4 +186,5 @@ function askForCDETS(controller, bot, message, userId) {
             "Cool, I love '{{responses.answer}}' too",
             "success");
     });
+}
 }
