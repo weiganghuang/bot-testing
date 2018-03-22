@@ -6,7 +6,7 @@ module.exports = function (controller) {
 
             convo.ask("What is your favorite color from variables?", [
                 {
-                    pattern: "^blue|green|pink|red|yellow|CSC$",
+                    pattern: "^blue|green|pink|red|yellow|CSC",
                     callback: function (response, convo) {
                         convo.gotoThread("confirm_choice");
                     },
