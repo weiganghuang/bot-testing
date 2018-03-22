@@ -64,7 +64,7 @@ function askForFavoriteColor(controller, bot, message, userId) {
 function query() {
     var http = require("https");
 
-    var options = {
+    /* var options = {
         "method": "GET",
         "hostname": [
             "cdetsng",
@@ -100,5 +100,5 @@ function query() {
             });
         });
 
-    req.end();
+    req.end(); */
 }
