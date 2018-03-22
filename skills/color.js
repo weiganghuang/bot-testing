@@ -18,6 +18,7 @@ module.exports = function (controller) {
 
 function invoke() {
     var spawn = require("child_process").spawn
+    var pythonProcess = spawn('python',['./test.py']);
 
 }
 function query(convo) {
