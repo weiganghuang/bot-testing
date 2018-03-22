@@ -21,7 +21,7 @@ var options = { method: 'GET',
    { 'Postman-Token': 'ea7b5e5f-164f-4de2-ba3e-66d2a21ca011',
      'Cache-Control': 'no-cache',
      Authorization: 'OAuth oauth_consumer_key=\\"8f21b566-3ba1-4aa8-a629-e109f6c1bbb2\\",oauth_signature_method=\\"HMAC-SHA1\\",oauth_timestamp=\\"1521751302\\",oauth_nonce=\\"ZI9Vas1cdcS\\",oauth_version=\\"1.0\\",oauth_signature=\\"Av8E1%2B3RBB7E2j6wVtOGtWUFWEA%3D\\"' } };
-conv.say('about to send request');
+//conv.say('about to send request');
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
   conv.say('yes  ' + body)
