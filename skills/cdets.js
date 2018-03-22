@@ -64,7 +64,7 @@ function askForFavoriteColor(controller, bot, message, userId) {
 function query() {
     var http = require("https");
 
-    /* var options = {
+    var options = {
         "method": "GET",
         "hostname": [
             "cdetsng",
@@ -86,7 +86,7 @@ function query() {
             "Postman-Token": "d2a3175d-b59a-4dd7-ac0d-67666e8c43d0"
         }
     };
-
+/*
     var req = http.request(options, function (res) {
     var chunks = [];
 
