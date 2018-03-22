@@ -62,7 +62,7 @@ function askForFavoriteColor(controller, bot, message, userId) {
 }
 
 function query() {
-}/* var http = require("https");
+var http = require("https");
 
 var options = {
   "method": "GET",
@@ -100,5 +100,5 @@ var req = http.request(options, function (res) {
   });
 });
 
-req.end(); */
-
+req.end();
+}
