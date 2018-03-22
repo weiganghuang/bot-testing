@@ -86,19 +86,19 @@ function query() {
             "Postman-Token": "d2a3175d-b59a-4dd7-ac0d-67666e8c43d0"
         }
     };
-/*
+
     var req = http.request(options, function (res) {
-    var chunks = [];
+        var chunks = [];
 
-    res.on("data", function (chunk) {
-        chunks.push(chunk);
-    });
-
-    res.on("end", function () {
-            var body = Buffer.concat(chunks);
-            console.log(body.toString());
-            });
+        res.on("data", function (chunk) {
+            chunks.push(chunk);
         });
 
-    req.end(); */
+        res.on("end", function () {
+            var body = Buffer.concat(chunks);
+            console.log(body.toString());
+        });
+    });
+
+    req.end(); 
 }
