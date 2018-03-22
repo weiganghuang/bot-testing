@@ -16,10 +16,10 @@ module.exports = function (controller) {
     });
 };
 
-/* function invoke() {
+function invoke() {
     var spawn = require("child_process").spawn
 
-} */
+}
 function query(convo) {
     var unirest = require("unirest");
 
