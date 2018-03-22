@@ -153,11 +153,11 @@ function askForCDETS(controller, bot, message, userId) {
 
         convo.ask("CDETS?", [
             {
-                pattern: "^CSC",
+                pattern: "^CSC$",
                 callback: function (response, convo) {
 
                     // Store color as user preference
-                    bot.message('you entered '+ convo.extractResponse('answer'))
+                    convo.say(message, 'you entered '+ convo.extractResponse('answer'))
                     var pickedColor = convo.extractResponse('answer');
                     var userPreference = { id: userId, value: pickedColor };
                     controller.storage.users.save(userPreference, function (err) {
