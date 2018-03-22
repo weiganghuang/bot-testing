@@ -24,7 +24,7 @@ module.exports = function (controller) {
             }
 
             // Ask for favorite color
-            askForCDETS(controller, bot, message, userId);
+            askForFavoriteColor(controller, bot, message, userId);
         });
     });
 }
@@ -75,7 +75,7 @@ function askForFavoriteColor(controller, bot, message, userId) {
 
         convo.ask("What is your favorite color?", [
             {
-                pattern: "^blue|green|pink|red|yellow$",
+                pattern: "^blue|pink|red|yellow$",
                 callback: function (response, convo) {
 
                     // Store color as user preference
