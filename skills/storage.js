@@ -7,6 +7,7 @@ module.exports = function (controller) {
 
         // Check if a User preference already exists
         var userId = message.raw_message.actorId;
+        bot.reply(message, 'hi, ' + userId)
         controller.storage.users.get(userId, function (err, data) {
             if (err) {
                 bot.reply(message, 'could not access storage, err: ' + err.message, function (err, message) {
@@ -23,7 +24,7 @@ module.exports = function (controller) {
             }
 
             // Ask for favorite color
-            askForFavoriteColor(controller, bot, message, userId);
+            askForCDETS(controller, bot, message, userId);
         });
     });
 }
@@ -75,6 +76,84 @@ function askForFavoriteColor(controller, bot, message, userId) {
         convo.ask("What is your favorite color?", [
             {
                 pattern: "^blue|green|pink|red|yellow$",
+                callback: function (response, convo) {
+
+                    // Store color as user preference
+                    var pickedColor = convo.extractResponse('answer');
+                    var userPreference = { id: userId, value: pickedColor };
+                    controller.storage.users.save(userPreference, function (err) {
+                        if (err) {
+                            convo.say(message, 'sorry, could not access storage, err: ' + err.message);
+                            convo.next();
+                            return;
+                        }
+
+                        convo.transitionTo("success", `_stored user preference_`);
+                    });
+
+                },
+            },
+            {
+                default: true,
+                callback: function (response, convo) {
+                    convo.say("Sorry, I don't know this color. Try another one...");
+                    convo.repeat();
+                    convo.next();
+                }
+            }
+        ], { key: "answer" });
+
+        // Success thread
+        convo.addMessage(
+            "Cool, I love '{{responses.answer}}' too",
+            "success");
+    });
+
+    function askForFavoriteColor(controller, bot, message, userId) {
+    bot.startConversation(message, function (err, convo) {
+
+        convo.ask("What is your favorite color?", [
+            {
+                pattern: "^blue|green|pink|red|yellow$",
+                callback: function (response, convo) {
+
+                    // Store color as user preference
+                    var pickedColor = convo.extractResponse('answer');
+                    var userPreference = { id: userId, value: pickedColor };
+                    controller.storage.users.save(userPreference, function (err) {
+                        if (err) {
+                            convo.say(message, 'sorry, could not access storage, err: ' + err.message);
+                            convo.next();
+                            return;
+                        }
+
+                        convo.transitionTo("success", `_stored user preference_`);
+                    });
+
+                },
+            },
+            {
+                default: true,
+                callback: function (response, convo) {
+                    convo.say("Sorry, I don't know this color. Try another one...");
+                    convo.repeat();
+                    convo.next();
+                }
+            }
+        ], { key: "answer" });
+
+        // Success thread
+        convo.addMessage(
+            "Cool, I love '{{responses.answer}}' too",
+            "success");
+    });
+}
+function askForCDETS(controller, bot, message, userId) {
+    bot.startConversation(message, function (err, convo) {
+
+        convo.ask("CDETS?", [
+            {
+                pattern: "^CSC",
                 callback: function (response, convo) {
 
                     // Store color as user preference
