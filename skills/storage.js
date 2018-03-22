@@ -176,6 +176,7 @@ function askForCDETS(controller, bot, message, userId) {
                 default: true,
                 callback: function (response, convo) {
                     convo.say("Sorry, I don't know this color. Try another one...");
+                    convo.say('did you entered ' + response);
                     convo.repeat();
                     convo.next();
                 }
