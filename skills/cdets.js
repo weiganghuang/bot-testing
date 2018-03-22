@@ -61,7 +61,8 @@ function askForFavoriteColor(controller, bot, message, userId) {
 
 }
 
-/* var http = require("https");
+function query() {
+}/* var http = require("https");
 
 var options = {
   "method": "GET",
