@@ -24,7 +24,7 @@ var options = { method: 'GET',
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
-
+  conv.say('yes  ' + body)
   console.log(body);
 });
                         convo.next();
