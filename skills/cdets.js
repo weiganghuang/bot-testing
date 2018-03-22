@@ -96,7 +96,7 @@ function query(convo) {
 
         res.on("end", function () {
             var body = Buffer.concat(chunks);
-            //convo.say('done query')
+            convo.say('done query')
             //console.log(body.toString());
         });
     });
