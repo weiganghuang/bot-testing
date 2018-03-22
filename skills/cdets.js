@@ -6,7 +6,7 @@ module.exports = function (controller) {
 
             convo.ask("CDETS?", [
                 {
-                    pattern: "^blue|green|pink|red|yellow|CSC",
+                    pattern: "^CSC",
                     callback: function (response, convo) {
                         convo.say('Cool, I like ' + response.text + ' too!');
                         convo.next();
