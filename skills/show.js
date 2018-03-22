@@ -14,9 +14,9 @@ module.exports = function (controller) {
 
         bot.startConversation(message, function (err, convo) {
 
-            convo.ask("Please choose a skill among 'color', 'restricted', 'show', 'storage1', 'threads', 'variables', 'about', 'join', 'help'", [
+            convo.ask("Please choose a skill among 'color', 'restricted', 'CDETS', show', 'storage1', 'threads', 'variables', 'about', 'join', 'help'", [
                 {
-                    pattern: "^color|restricted|show|storage1|threads|variables|about|join|help$",
+                    pattern: "^color|restricted|CDETS|show|storage1|threads|variables|about|join|help$",
                     callback: function (response, convo) {
                         // ends current conversation
                         convo.stop();
