@@ -4,7 +4,7 @@ module.exports = function (controller) {
 
         bot.startConversation(message, function (err, convo) {
 
-            convo.ask("What is your favorite color?", [
+            convo.ask("What is your favorite color from threads?", [
                 {
                     pattern: "^blue|green|pink|red|yellow$",
                     callback: function (response, convo) {
