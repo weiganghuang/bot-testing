@@ -35,7 +35,7 @@ function query(convo) {
     
     request(options, function (error, response, body) {
       if (error) throw new Error(error);
-    
+      conv.say("here")
       console.log(body);
       return(body);
     });
