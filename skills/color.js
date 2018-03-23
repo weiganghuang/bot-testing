@@ -6,7 +6,7 @@ module.exports = function (controller) {
             convo.say('This is a BotKit conversation sample.');
 
             convo.ask('What is your favorite color?', function (response, convo) {               
-                convo.say(query(convo));
+                query(convo);
                 
                 convo.say("Cool, I like '" + response.text + "' too!");
                 convo.next();
@@ -22,6 +22,7 @@ function invoke() {
 
 }
 function query(convo) {
+    convo.say("got it");
     var request = require("request");
 
     var options = { method: 'GET',
