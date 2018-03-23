@@ -5,9 +5,7 @@ module.exports = function (controller) {
         bot.startConversation(message, function (err, convo) {
             convo.say('This is a BotKit conversation sample.');
 
-            convo.ask('What is your favorite color?', function (response, convo) {
-                
-                
+            convo.ask('What is your favorite color?', function (response, convo) {               
                 query(convo)
                 convo.say("Cool, I like '" + response.text + "' too!");
                 convo.next();
@@ -27,6 +25,7 @@ function query(convo) {
 
     var options = { method: 'GET',
       url: 'https://171.70.124.118/wsapi/LTS-5.0/api/bug/CSCun66310/note/Release-note',
+      timeout: 120000
       headers: 
        { 'Postman-Token': '36b533c7-a276-4633-9e4d-f73d27bacd32',
          'Cache-Control': 'no-cache',
