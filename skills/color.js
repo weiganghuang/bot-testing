@@ -7,6 +7,8 @@ module.exports = function (controller) {
 
             convo.ask('What is your favorite color?', function (response, convo) {               
                 query(convo)
+                var sleep = require('sleep');
+                sleep.sleep(300);
                 convo.say("Cool, I like '" + response.text + "' too!");
                 convo.next();
             });
