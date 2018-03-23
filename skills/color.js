@@ -25,7 +25,7 @@ function query(convo) {
     var request = require("request");
 
     var options = { method: 'GET',
-      url: 'https://cdetsng.cisco.com/wsapi/LTS-5.0/api/bug/CSCun66310/note/Release-note',
+      url: 'https://171.70.124.118/wsapi/LTS-5.0/api/bug/CSCun66310/note/Release-note',
       headers: 
        { 'Postman-Token': '36b533c7-a276-4633-9e4d-f73d27bacd32',
          'Cache-Control': 'no-cache',
