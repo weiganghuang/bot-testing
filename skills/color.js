@@ -8,7 +8,7 @@ module.exports = function (controller) {
             convo.ask('What is your favorite color?', function (response, convo) {
                 
                 convo.say("Cool, I like '" + response.text + "' too!");
-                invoke()
+                query(convo)
                 convo.next();
             });
         });
