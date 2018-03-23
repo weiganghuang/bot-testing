@@ -22,22 +22,44 @@ function invoke() {
 
 }
 function query(convo) {
-    var unirest = require("unirest");
+    var http = require("https");
 
-    var req = unirest("GET", "https://cdetsng.cisco.com/wsapi/LTS-5.0/api/bug/CSCun66310/note/Release-note");
-    
-    req.headers({
-      //"Postman-Token": "e45590e2-79b2-4f8c-a554-2a4d513ed072",
-      "Cache-Control": "no-cache",
-      "Authorization": "OAuth oauth_consumer_key=\\\"8f21b566-3ba1-4aa8-a629-e109f6c1bbb2\\\",oauth_signature_method=\\\"HMAC-SHA1\\\",oauth_timestamp=\\\"1521759362\\\",oauth_nonce=\\\"KThl8SvRIuw\\\",oauth_version=\\\"1.0\\\",oauth_signature=\\\"oMoXqBrVVimd6kzz%2B8sAld9g48I%3D\\\""
-    });
-    
-    
-    req.end(function (res) {
-      if (res.error) throw new Error(res.error);
-    
-      console.log(res.body);
-    });
-    
+var options = {
+  "method": "GET",
+  "hostname": [
+    "cdetsng",
+    "cisco",
+    "com"
+  ],
+  "path": [
+    "wsapi",
+    "LTS-5.0",
+    "api",
+    "bug",
+    "CSCun66310",
+    "note",
+    "Release-note"
+  ],
+  "headers": {
+    "Authorization": "OAuth oauth_consumer_key=\\\"8f21b566-3ba1-4aa8-a629-e109f6c1bbb2\\\",oauth_signature_method=\\\"HMAC-SHA1\\\",oauth_timestamp=\\\"1521760724\\\",oauth_nonce=\\\"QQniicDwLyO\\\",oauth_version=\\\"1.0\\\",oauth_signature=\\\"NEoMFSzF6Ow7%2FUufWt5j294ybh0%3D\\\"",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "493819fc-5846-4f43-85a0-be973a78219c"
+  }
+};
+
+var req = http.request(options, function (res) {
+  var chunks = [];
+
+  res.on("data", function (chunk) {
+    chunks.push(chunk);
+  });
+
+  res.on("end", function () {
+    var body = Buffer.concat(chunks);
+    console.log(body.toString());
+  });
+});
+
+req.end();
 }
 
